@@ -1,0 +1,90 @@
+#toasts-wrapper {
+    z-index: 100;
+}
+
+#toasts-message {
+    padding: 14px 18px;
+    background-color: #fff;
+    border-left: 3px solid;
+    border-radius: 4px;
+    box-shadow: 0px 3px 7px 0px rgba(32,33,36,0.28);
+    animation: showToastsMessage .12s ease forwards;
+}
+
+#toasts-message.is-hide {
+    animation: hideToastsMessage .2s ease;
+}
+
+#toasts-message.type-error {
+    border-color: #f35151;
+}
+
+#toasts-message.type-success {
+    border-color: #56bd5b;
+}
+
+#toasts-icon {
+    margin-right: 14px;
+}
+
+#toasts-icon.ti-alert {
+    color: #f35151;
+}
+
+#toasts-icon.ti-face-smile {
+    color: #56bd5b;
+}
+
+#toasts-message h5,
+#toasts-message p {
+    margin: 0;
+}
+
+#toasts-message h5 {
+    color: #667587;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#toasts-message p {
+    color: #667587;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+#btn-toasts {
+    margin-left: 14px;
+    color: #667587;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#toasts-message.type-success #btn-toasts:hover {
+    color: #f35151;
+}
+
+#toasts-message.type-success #btn-toasts:hover {
+    color: #56bd5b;
+}
+
+@keyframes showToastsMessage {
+    0% {
+        margin-bottom: 24px;
+    }
+
+    100% {
+        margin-bottom: 32px;
+    }
+}
+
+@keyframes hideToastsMessage {
+    0% {
+        margin-bottom: 32px;
+    }
+
+    100% {
+        opacity: 0;
+        margin-bottom: 40px;
+    }
+}

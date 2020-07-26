@@ -1,0 +1,98 @@
+#table-footer {
+    margin-top: 16px;
+    padding: 0 12px;
+}
+
+#table-footer.is-hide {
+    display: none;
+}
+
+#table-footer * {
+    font-size: 14px;
+}
+
+#table-footer .width-30 {
+    color: #667587;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown li,
+#pagination a {
+    padding: 2px 8px;
+    background-color: #fff;
+    border: solid 1px #dfe6ee;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.dropdown.active li {
+    color: #3ca4e6;
+}
+
+.dropdown li:hover {
+    color: #3ca4e6;
+}
+
+.dropdown > div {
+    display: none;
+    bottom: 100%;
+    margin-bottom: 6px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 3px 7px 0px rgba(32,33,36,0.28);
+}
+
+.dropdown.active > div {
+    display: inline-block;
+}
+
+.dropdown > div p {
+    margin: 0;
+    padding: 12px;
+    white-space: nowrap;
+}
+
+.dropdown > div p:hover {
+    color: #fff !important;
+    background-color: #3ca4e6;
+    border-radius: 3px;
+}
+
+#dropdown-data-per-page > div p {
+    text-align: center;
+}
+    
+#pagination-wrapper button {
+    background-color: #fff;
+    border: solid 1px #dfe6ee;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+#pagination-wrapper button:hover,
+#pagination a:hover {
+    background-color: rgba(60, 164, 230, 0.15);
+}
+
+#pagination-wrapper button:active {
+    color: #fff;
+    background-color: #3ca4e6;
+}
+
+#pagination-wrapper button:focus {
+    outline: none;
+}
+
+#pagination a {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+#pagination a.pasif {
+    color: #fff;
+    background-color: #3ca4e6;
+    border: 0;
+}

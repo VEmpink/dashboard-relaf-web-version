@@ -1,0 +1,64 @@
+#table-header {
+    margin-bottom: 16px;
+}
+
+#btn-add-database,
+#btn-select-date {
+    padding: 8px 16px;
+}
+
+#form-select-date {
+    top: 100%;
+    left: calc(-50% + 24px);
+    margin-top: 12px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 3px 7px 0 rgba(32,33,36,0.28);
+}
+
+#form-select-date span {
+    display: inline-block;
+    width: 100%;
+    color: #667587;
+    margin-bottom: 10px;
+}
+
+#form-select-date input {
+    margin-bottom: 10px;
+    padding: 7px 10px;
+}
+
+#form-select-date button[type="submit"] {
+    margin: 0;
+    padding: 6px 10px;
+}
+
+#table-header .ti-search {
+    margin-left: 8px;
+    z-index: 1;
+}
+
+#search-datatable {
+    padding: 8px 12px 8px 28px;
+    border-color: #dfe6ee;
+}
+
+#info-selected-date {
+    display: none;
+    margin-top: 16px;
+}
+
+#info-selected-date.is-show {
+    display: block;
+}
+
+#info-selected-date * {
+    color: #667587;
+    font-size: 12px;
+}
+
+#info-selected-date button {
+    color: #fff;
+    background-image: linear-gradient(150deg, #fcb53b 20%, #f99824 95%);
+}

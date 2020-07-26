@@ -1,0 +1,70 @@
+#main-menu {
+    margin: 0 0 32px 0;
+}
+
+#main-menu h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#main-menu button {
+    font-family: 'Cabin-Regular';
+    font-size: 14px;
+    color: #667587;
+    padding: 0;
+    margin-left: 14px;
+    border: 1px solid #dfe6ee;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 4px;
+}
+
+#main-menu button div {
+    display: inline-block;
+    padding: 4px 10px;
+}
+
+#main-menu button div:first-child {
+    border-right: 1px solid #dfe6ee;
+}
+
+#main-menu button span {
+    color: #667587 !important;
+}
+
+#btn-backup-database .ti-export {
+    color: #3c71da !important;
+}
+
+#btn-backup-database:hover,
+#btn-restore-database:hover,
+#btn-settings:hover {
+    opacity: 1 !important;
+}
+
+#btn-backup-database:hover,
+#btn-backup-database:hover div:first-child {
+    border-color: #3c71da !important;
+}
+
+#btn-backup-database:hover div:last-child span {
+    color: #3c71da !important;
+}
+
+#btn-restore-database .ti-import {
+    color: #56bd5b !important;
+}
+
+#btn-restore-database:hover,
+#btn-restore-database:hover div:first-child {
+    border-color: #56bd5b !important;
+}
+
+#btn-restore-database:hover div:last-child span {
+    color: #56bd5b !important;
+}
+
+#selectFile {
+    cursor: pointer;
+}

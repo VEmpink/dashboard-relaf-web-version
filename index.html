@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="assets/css/layout.css">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/main-menu.css">
+        <link rel="stylesheet" href="assets/css/box-info-data.css">
+        <link rel="stylesheet" href="assets/css/table-header.css">
+        <link rel="stylesheet" href="assets/css/main-form.css">
+        <link rel="stylesheet" href="assets/css/table.css">
+        <link rel="stylesheet" href="assets/css/table-footer.css">
+        <link rel="stylesheet" href="assets/css/menu-selected-datatable.css">
+        <link rel="stylesheet" href="assets/css/toasts-message.css">
+        <link rel="stylesheet" href="assets/css/themify-icons.css">
+        <script>
+            window.addEventListener('load', function(e) { 
+                document.querySelectorAll('body')[0].classList.add('is-loaded');
+            });
+        </script>
+    </head>
+<body>
+    <div id="main-form-wrapper" class="zi-10 fixed-top-left trnsf-center txt-center">
+        <h4 id="title-main-form" class="width-fw no-margin-top">Tambah Data</h4>
+        <form action="#" method="POST" id="main-form">
+            <div class="width-fw txt-left">
+                <p class="display-ib no-margin-top">Tanggal</p>
+                <input type="text" name="date" id="main-form-date" value="" disabled />
+            </div>
+            <div class="box-flex width-fw">
+                <div class="width-50 txt-left">
+                    <p class="display-ib no-margin-top">Nama Tim</p>
+                    <input type="text" name="nameTeam" id="name-team" placeholder="Nama Tim Futsal (Wajib)" required>
+                </div>
+                <div class="width-50 txt-left">
+                    <p class="display-ib no-margin-top">Asal Tim</p>
+                    <input type="text" name="fromTeam" id="from-team" placeholder="Asal Tim Futsal (Wajib)" required>
+                </div>
+            </div>
+            <div class="box-flex">
+                <div class="width-40 txt-left">
+                    <p class="display-ib no-margin-top">Waktu Mulai</p>
+                    <input type="time" name="timeBegin" id="time-begin" required>
+                </div>
+                <div class="width-60 txt-left">
+                    <p class="display-ib no-margin-top">Waktu Bermain</p>
+                    <input type="number" name="timePlay" id="time-play" placeholder="Waktu Lama Bermain (Opsional)">
+                </div>
+            </div>
+            <div class="box-flex rmv-m">
+                <div class="width-fw txt-left">
+                    <p class="display-ib no-margin-top">Uang Muka atau DP</p>
+                    <input type="number" name="downPayment" id="down-payment"
+                        placeholder="Uang muka atau DP (Opsional)">
+                </div>
+                <div class="width-fw txt-left">
+                    <p class="display-ib no-margin-top">Uang Dibayar atau sisa DP</p>
+                    <input type="number" name="moneyPaid" id="money-paid" placeholder="Uang dibayar (Opsional)">
+                </div>
+            </div>
+            <input type="submit" id="main-form-submit" class="ui-style-btn" value="Tambahkan">
+        </form>
+    </div>
+
+    <!--Element ini akan ter-blur ketika #main-form ditampilkan-->
+    <div id="main-content">
+        <div id="blur-content" class="width-fw height-fh absolute-top-left"></div>
+        <div id="main-menu" class="box-flex">
+            <div class="width-50 equal-elm-size">
+                <h4>Dashboard rental lapangan futsal</h4>
+            </div>
+            <div class="width-50 equal-elm-size txt-right">
+                <button id="btn-backup-database" class="ui-style-btn">
+                    <div>
+                        <span class="ti-export"></span>
+                    </div>
+                    <div>
+                        <span>Backup</span>
+                    </div>
+                    <a href="/backup-database"
+                        class="absolute-top-left width-fw height-fh zi-10 no-opacity"></a>
+                </button>
+                <button id="btn-restore-database" class="ui-style-btn">
+                    <div>
+                        <span class="ti-import"></span>
+                    </div>
+                    <div>
+                        <span>Restore</span>
+                    </div>
+                    <input id="selectFile" type="file" accept="application/JSON"
+                        class="absolute-top-left width-fw height-fh zi-10 no-opacity">
+                </button>
+            </div>
+        </div>
+
+        <div id="box-info-data" class="width-fw txt-left">
+            <div id="info-total-data" class="display-ib">
+                <h5>Total Data Tersimpan</h5>
+                <span id="value-total-data">0</span>
+                <p id="status-total-data" class="display-ib rmv-m">dari seluruh data</p>
+            </div>
+            <div id="info-total-income" class="display-ib">
+                <h5>Total Penghasilan</h5>
+                <span id="value-total-income">0</span>
+                <p id="status-total-income" class="display-ib rmv-m">dari seluruh data</p>
+            </div>
+            <div id="info-average-income" class="display-ib">
+                <h5>Rata - rata Penghasilan</h5>
+                <span id="value-average-income">0</span>
+                <p id="status-average-income" class="display-ib rmv-m">dari seluruh data</p>
+                <ul id="dropdown-average-income" class="dropdown display-ib csm-ul">
+                    <li>Per Hari</li>
+                    <datalist class="absolute-top-left">
+                        <p>Per Hari</p>
+                        <p>Per Minggu</p>
+                        <p>Per Bulan</p>
+                        <p>Per Tahun</p>
+                    </datalist>
+                </ul>
+            </div>
+        </div>
+
+        <div id="table-header" class="width-fw box-flex">
+            <div class="width-40 equal-elm-size txt-left">
+                <button id="btn-add-database" class="ui-style-btn">
+                    <span class="ti-plus"></span>
+                    Tambah Data
+                </button>
+            </div>
+            <div class="width-20 equal-elm-size txt-center">
+                <div class="display-ib">
+                    <button id="btn-select-date" class="ui-style-btn">
+                        <span class="ti-calendar"></span>
+                        Pilih Tanggal
+                    </button>
+                    <form action="#" method="POST" id="form-select-date" class="absolute-top-left txt-center">
+                        <span>Dari tanggal:</span>
+                        <input type="date" name="dateStart" id="dateStart" class="ui-style-input" required>
+                        <span>Sampai tanggal:</span>
+                        <input type="date" name="dateEnd" id="dateEnd" class="ui-style-input" required>
+                        <button type="submit" class="ui-style-btn">
+                            <span class="ti-search"></span>
+                            Cari data
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="width-40 equal-elm-size txt-right">
+                <span class="ti-search absolute-top-left trnsf-hr-center"></span>
+                <input type="search" name="search" id="search-datatable"
+                    class="width-fw ui-style-input"
+                    placeholder="Cari data dari nama tim, atau asal tim">
+            </div>
+            <div id="info-selected-date" class="width-fw txt-center">
+                <span class="ti-info-alt"></span>
+                <p class="display-ib rmv-m"></p>
+                <button id="btn-reset-selected-date" class="display-ib ui-style-btn">Reset</button>
+            </div>
+        </div>
+
+        <div id="table">
+            <div id="thead" class="box-flex display-center">
+                <p class="txt-center">Tanggal</p>
+                <p class="txt-left">Nama Tim</p>
+                <p class="txt-left">Asal Tim</p>
+                <p class="txt-center">Waktu Mulai</p>
+                <p class="txt-center">Waktu Main</p>
+                <p class="txt-center">Uang Muka</p>
+                <p class="txt-center">Uang Dibayar</p>
+            </div>
+            <div id="tbody"></div>
+        </div>
+
+        <div id="table-footer" class="width-fw box-flex">
+            <div class="width-30 equal-elm-size txt-left">
+                Urutkan data dari:
+                <ul id="dropdown-sort-data" class="dropdown display-ib csm-ul">
+                    <li>Tanggal terbaru</li>
+                    <div class="display-ib absolute-btm-left">
+                        <p>Tanggal terbaru</p>
+                        <p>Tanggal terlama</p>
+                        <p>Nama Tim A-Z</p>
+                        <p>Nama Tim Z-A</p>
+                        <p>Asal Tim A-Z</p>
+                        <p>Asal Tim Z-A</p>
+                    </div>
+                </ul>
+            </div>
+            <div id="pagination-wrapper" class="width-40 equal-elm-size txt-center">
+                <button id="first-page-pagination">First</button>
+                <div id="pagination" class="display-ib"></div>
+                <button id="last-page-pagination">Last</button>
+            </div>
+            <div class="width-30 equal-elm-size txt-right">
+                Data per halaman:
+                <ul id="dropdown-data-per-page" class="dropdown display-ib csm-ul">
+                    <li>5</li>
+                    <div class="display-ib absolute-btm-right">
+                        <p>5</p>
+                        <p>10</p>
+                        <p>15</p>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div id="menu-selected-datatable" class="fixed-top-left trnsf-vr-center">
+            <div class="display-ib">
+                <div id="total-items-selected" class="display-ib">
+                    <span>0</span>
+                    <p class="display-ib rmv-m">data dipilih</p>
+                </div>
+                <button id="edit-selected-datatable" class="ui-style-btn">
+                    <span class="ti-pencil"></span> Ubah
+                </button>
+                <button id="delete-selected-datatable" class="ui-style-btn">
+                    <span class="ti-trash"></span> Hapus
+                </button>
+                <span id="reset-selected-datatable" class="va-middle ti-close"></span>
+                <div id="before-delete-datatable" class="absolute-top-left trnsf-vr-center txt-center">
+                    <span class="ti-help-alt va-middle"></span>
+                    <div class="display-ib txt-left va-middle">
+                        <h5>Apakah ingin</h5>
+                        <p class="display-ib">Hapus data terpilih?</p>
+                    </div>
+                    <div class="display-ib va-middle">
+                        <button id="yes-deleteData" class="ui-style-btn">
+                            <span class="ti-trash"></span>Hapus
+                        </button>
+                        <button id="no-deleteData" class="ui-style-btn">
+                            <span class="ti-close"></span>Tidak
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toasts-wrapper" class="absolute-btm-left trnsf-vr-center"></div>
+
+    <!--Script-->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/event-click.js"></script>
+    <script src="assets/js/form.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

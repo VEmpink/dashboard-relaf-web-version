@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Cabin-Bold';
+    src: url('../fonts/Cabin-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Cabin-SemiBold';
+    src: url('../fonts/Cabin-SemiBold.ttf');
+}
+  
+@font-face {
+    font-family: 'Cabin-Medium';
+    src: url('../fonts/Cabin-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Cabin-Regular';
+    src: url('../fonts/Cabin-Regular.ttf');
+}
+
+* {
+    font-family: 'Cabin-Regular';
+    color: #313842;
+}
+
+body {
+    background-color: #f4f7fa;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Style utama */
+.ui-style-input {
+    background-color: white;
+    border: solid 1px #b0bac5;
+    border-radius: 2px;
+}
+
+.ui-style-input:focus {
+    border: solid 2px rgba(60, 164, 230, 0.7);
+    outline: none;
+}
+
+.ui-style-btn {
+    position: relative;
+    font-family: 'Cabin-Bold';
+    color: #f4f7fa;
+    background-color: #3ca4e6;
+    border: 0;
+    border-radius: 3px;
+    background-image: linear-gradient(150deg, #3CA4E6 20%, #3C71DA 95%);
+    cursor: pointer;
+}
+
+.ui-style-btn:hover {
+    opacity: 0.85;
+}
+
+.ui-style-btn:focus {
+    outline: none;
+}
+    
+.ui-style-btn [class*="ti-"] {
+    display: inline-block;
+    width: auto !important;
+    color: #fff !important;
+    margin: 0 4px 0 0 !important;
+}
+
+body {
+    opacity: 0;
+}
+
+body.is-loaded {
+    opacity: 1;
+    transition: all .2s ease;
+}
+
+#main-content {
+    padding: 32px;
+}
+
+#main-content.active #blur-content {
+    background-color: rgba(244, 247, 250, 0.75);
+    z-index: 2;
+}
+
+#main-form-wrapper,
+#form-select-date {
+    display: none;
+    transition: all .045s ease;
+}
+
+#main-form-wrapper.active,
+#form-select-date.active {
+    display: inline-block;
+    z-index: 10;
+    animation: showElement .12s ease forwards;
+}
+
+@keyframes showElement {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
