@@ -5,7 +5,8 @@ var fs = require('fs'),
     Datastore = require('nedb'),
     db = new Datastore({ filename: 'assets/db/customer.db', autoload: true }),
     bodyParser = require('body-parser');
-
+    port = 3778;
+    
 /**
  * Cheking primitive value `integer`, `return false;` jika `NaN`
  */
@@ -235,6 +236,8 @@ app.post('/restore-database', function(req, res) {
     }
 });
 
-app.listen(3000, function() {
-    console.log('Running');
+app.listen(port, function() {
+    console.log('Aplikasi berhasil dijalankan!');
+    console.log('Buka Browser seperti Google Chrome atau Mozila');
+    console.log(`dan ketikan link http://localhost:${port}`);
 });
