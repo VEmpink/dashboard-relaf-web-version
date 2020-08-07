@@ -11,4 +11,4 @@
 2. NeDB
 3. Themify Icon
 ##### Ada juga yang versi ElectronJS
-https://github.com/VEmpink/dashboard-rental-lapangan-futsal
+https://github.com/VEmpink/dashboard-relaf-electron-version
